@@ -26,8 +26,14 @@ runs:
     - name: Setup Graphviz
       uses: ts-graphviz/setup-graphviz@v1
 
+    - name: debug
+      run: |
+        echo ${{runner.os}}
+	echo contains(runner.os,'ubuntu')
+      shell: bash
+
     - name: Install FORD & Generate DOCS
-      if: contains(runner.os ,'ubuntu')
+      if: contains(runner.os,'ubuntu')
       run: |
         python -m pip install --upgrade pip
         pip install ford
