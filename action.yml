@@ -2,6 +2,7 @@ name: 'QcmPlab setup action FORD'
 description: 'Setup action for FORD'
 
 inputs:
+
   python-version: 
     description: 'Python version input'
     required: false
@@ -34,5 +35,5 @@ runs:
       shell: bash
 
     - name: Generate DOCS
-      run: ford ${{ input.config-name }}
+      run: ford ${{ inputs.config-name }}
       shell: bash
