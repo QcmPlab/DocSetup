@@ -1,6 +1,10 @@
 name: 'QcmPlab setup action FORD'
 description: 'Setup action for FORD'
 
+defaults:
+  run:
+    shell: bash
+
 inputs:
   python-version: 
     description: 'Python version input'
@@ -20,6 +24,7 @@ runs:
       uses: actions/setup-python@v1
       with:
         python-version: ${{ inputs.python-version }}
+      
 
     - name: Setup Graphviz
       uses: ts-graphviz/setup-graphviz@v1
@@ -30,6 +35,7 @@ runs:
         python -m pip install --upgrade pip
         pip install ford
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+
     - name: Generate DOCS
       run: ford ${{ input.config-name }}
      
