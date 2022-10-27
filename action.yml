@@ -26,12 +26,6 @@ runs:
     - name: Setup Graphviz
       uses: ts-graphviz/setup-graphviz@v1
 
-    - name: debug
-      run: |
-        echo ${{runner.os}}
-        echo ${{contains(runner.os,'Linux')}}
-      shell: bash
-
     - name: Install FORD & Generate DOCS
       if: contains(runner.os,'Linux')
       run: |
