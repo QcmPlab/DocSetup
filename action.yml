@@ -29,7 +29,7 @@ runs:
     - name: debug
       run: |
         echo ${{runner.os}}
-	echo contains(runner.os,'ubuntu')
+        echo contains(runner.os,'ubuntu')
       shell: bash
 
     - name: Install FORD & Generate DOCS
