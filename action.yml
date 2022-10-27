@@ -29,7 +29,7 @@ runs:
     - name: debug
       run: |
         echo ${{runner.os}}
-        echo contains(runner.os,'Linux')
+        echo ${{contains(runner.os,'Linux')}}
       shell: bash
 
     - name: Install FORD & Generate DOCS
