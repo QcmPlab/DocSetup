@@ -1,10 +1,6 @@
 name: 'QcmPlab setup action FORD'
 description: 'Setup action for FORD'
 
-defaults:
-  run:
-    shell: bash
-
 inputs:
   python-version: 
     description: 'Python version input'
@@ -35,7 +31,8 @@ runs:
         python -m pip install --upgrade pip
         pip install ford
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+      shell: bash
 
     - name: Generate DOCS
       run: ford ${{ input.config-name }}
-     
+      shell: bash
